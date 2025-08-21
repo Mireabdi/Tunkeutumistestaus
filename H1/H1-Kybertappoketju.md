@@ -5,7 +5,16 @@
 
 ### X) Artikkelit
 
-### A) Kali linuxin Versio: 2025.3 asennus: Sujui ongelmitta, Latasin ensin VMwaren jonka jälkeen VMware version Kali Linuxista.
+https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
+
+- Intrusion Kill Chain malli jakaa kyberhyökkäykset seitsemään eri vaiheeseen: tiedustelu, aseistaminen, toimitus, hyväksikäyttö, asennus, komentokanava ja tavoitteiden saavuttaminen.
+
+- Auttaa puolustajia ymmärtämään hyökkäyksen kulun ja keskeyttämään sen mahdollisimman aikaisessa vaiheessa.
+
+
+### A) Kali linuxin Versio: 2025.3 asennus
+
+Sujui ongelmitta, Latasin ensin VMwaren jonka jälkeen VMware version Kali Linuxista.
 
 ![kuva1](/H1/kuvat/kuva1.png)
 
@@ -13,14 +22,19 @@
 
 ![kuva1](/H1/kuvat/kuva2.png)
 
-### C) Porttiskannaus: `nmap -T4 -A localhost`. Parametrit sain selvitettyä komennolla `man nmap` ja etsin komennolla `/-A` 
+Laitoin Wifi:n pois päältä läppäristä ja pingasin 8.8.8.8
+### C) Porttiskannaus: `nmap -T4 -A localhost`. 
+
+Parametrit sain selvitettyä komennolla `man nmap` ja etsin komennolla `/-A` 
 #### Parametrit:
 `-T4`: Nopea skannaus. `-A`: tunnistaa OS ja version
 
 ![kuva1](/H1/kuvat/kuva4.png)
 ![kuva1](/H1/kuvat/kuva3.png)
 
-sammutin netin ja skannasin. Kaikki 1000 porttia ovat kiinni
+Sammutin netin ja skannasin:  `nmap -T4 -A localhost`. Kaikki 1000 porttia ovat kiinni
+
+(unohdin ottaa screengrabin tästä kohtaa, pahoittelut.)
 
 ### D) Demonien asennus ja uudelleen skannaus: 
 Latasin demonit: Apache2 (HTTP-palvelin) ja vsftpd (FTP-palvelin) 
@@ -48,7 +62,7 @@ Sammutin netin ja skannasin. Erona edelliseen, nyt näyttää olevan kaksi portt
 
 ### E ja F) Metasploitable 2.
 
-latasin ja purkasin Metasploitable 2 jonka jälkeen lisäsin sen VMwareen. Eristääkseni verkon muokkasin verkkoadapterin asetuksia niin että KaliVM:llä on kaksi adapteria (NAT ja Host) ja Metaspoiltablella on vain yksi adapteri (Host-only). 
+Latasin ja purkasin Metasploitable 2 jonka jälkeen lisäsin sen VMwareen. Eristääkseni verkon muokkasin verkkoadapterin asetuksia niin että KaliVM:llä on kaksi adapteria (NAT ja Host) ja Metaspoiltablella on vain yksi adapteri (Host-only). 
 
 Seuraavaski tarkistin metasploitable 2 IP-osoitteen komennolla `ifconfig`  ja pingasin sitä KaliVM-koneesta.
 
@@ -58,25 +72,34 @@ Seuraavaski tarkistin metasploitable 2 IP-osoitteen komennolla `ifconfig`  ja pi
 
 ![kuva1](/H1/kuvat/kuva7.png)
 
-Sammutettuani netin, Ensin käytin vain `nmap -sn` joka antoi vastauksen No targets were specified ja ymmärsin että pitää laittaa IP osoite perään. 
+Sammutettuani netin, ensin käytin vain `nmap -sn` joka antoi vastauksen No targets were specified ja ymmärsin että pitää laittaa IP osoite perään. 
 
 ![kuva1](/H1/kuvat/Kuva8.png)
 
 ### H) Metasploitable porttiskannaus komennolla `nmap -A -T4 -p-` 
 
-Valitsin portit
+Hyökkääjälle kiinnostavat portit:
 
 Portti 21 Telnet
 
 ![kuva1](/H1/kuvat/kuva9.png)
 
-Telnet näyttää salasanat selvässä tekstissä ilman mitään salausta joka tekee siitä haavoittuvaisuuden
+Telnet näyttää salasanat selvässä tekstissä ilman mitään salausta joka tekee siitä haavoittuvaisuuden.
 
 Portti 21 FTP
 
 ![kuva1](/H1/kuvat/kuva10.png)
 
-Skannauksessa tuli ilmi: Anonymous FTP log in allowed. Antaa luvan anonyyminä ladata ja lukea tiedostoja.'
+Skannauksessa tuli ilmi haavottuvaisuus: Anonymous FTP login allowed. Antaa luvan anonyyminä ladata ja lukea tiedostoja.
+
+
+#### Referenssit: 
+
+Karvinen: https://terokarvinen.com/tunkeutumistestaus/
+
+IBM: https://www.ibm.com/docs/en/i/7.5.0?topic=i-configuring-anonymous-ftp
+
+lockhead Martin: https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
 
 
 
