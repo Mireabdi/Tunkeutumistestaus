@@ -1,6 +1,8 @@
 # Tunkeutumistestaus
 
+### Abdirahman Mire
 ## ICI005AS3A-3005
+
 ### H1 Kybertappoketju
 
 ### X) Artikkelit
@@ -53,7 +55,7 @@ Sujui ongelmitta, Latasin ensin VMwaren jonka jälkeen VMware version Kali Linux
 
 ![kuva1](/H1/kuvat/kuva2.png)
 
-Laitoin Wifi:n pois päältä läppäristä ja pingasin 8.8.8.8
+offline tilassa pingasin 8.8.8.8
 ### C) Porttiskannaus: `nmap -T4 -A localhost`. 
 
 Parametrit sain selvitettyä komennolla `man nmap` ja etsin komennolla `/-A` 
@@ -63,9 +65,9 @@ Parametrit sain selvitettyä komennolla `man nmap` ja etsin komennolla `/-A`
 ![kuva1](/H1/kuvat/kuva4.png)
 ![kuva1](/H1/kuvat/kuva3.png)
 
-Sammutin netin ja skannasin:  `nmap -T4 -A localhost`. Kaikki 1000 porttia ovat kiinni
+Skannasin offline-tilassa:  `nmap -T4 -A localhost`. Kaikki 1000 porttia ovat kiinni
 
-(unohdin ottaa screengrabin tästä kohtaa, pahoittelut.)
+(unohdin ottaa screenshotin tästä kohtaa, pahoittelut.)
 
 ### D) Demonien asennus ja uudelleen skannaus: 
 Latasin demonit: Apache2 (HTTP-palvelin) ja vsftpd (FTP-palvelin) 
@@ -89,11 +91,11 @@ uudelleen skannaus:
 
 ![kuva1](/H1/kuvat/kuva5.png)
 
-Sammutin netin ja skannasin. Erona edelliseen, nyt näyttää olevan kaksi porttia(21 ftp ja 80 http) auki 
+Skannasin offline-tilassa. Erona edelliseen, nyt näyttää olevan kaksi porttia(21 ftp ja 80 http) auki 
 
 ### E ja F) Metasploitable 2.
 
-Latasin ja purkasin Metasploitable 2 jonka jälkeen lisäsin sen VMwareen. Eristääkseni verkon muokkasin verkkoadapterin asetuksia niin että KaliVM:llä on kaksi adapteria (NAT ja Host) ja Metaspoiltablella on vain yksi adapteri (Host-only). 
+Latasin ja purkasin Metasploitable 2 jonka jälkeen lisäsin sen VMwareen. Eristääkseni verkon muokkasin verkkoadapterin asetuksia niin että KaliVM:llä on kaksi adapteria (NAT ja Host) ja Metasploitablella on vain yksi adapteri (Host-only). 
 
 Seuraavaski tarkistin metasploitable 2 IP-osoitteen komennolla `ifconfig`  ja pingasin sitä KaliVM-koneesta.
 
@@ -103,7 +105,7 @@ Seuraavaski tarkistin metasploitable 2 IP-osoitteen komennolla `ifconfig`  ja pi
 
 ![kuva1](/H1/kuvat/kuva7.png)
 
-Sammutettuani netin, ensin käytin vain `nmap -sn` joka antoi vastauksen No targets were specified ja ymmärsin että pitää laittaa IP osoite perään. 
+offline tilassa käytin `nmap -sn` joka antoi vastauksen No targets were specified ja ymmärsin että pitää laittaa IP osoite perään. 
 
 ![kuva1](/H1/kuvat/Kuva8.png)
 
@@ -121,7 +123,7 @@ Portti 21 FTP
 
 ![kuva1](/H1/kuvat/kuva10.png)
 
-Haavottuvaisuus 2: Anonymous FTP login allowed. Antaa luvan anonyyminä ladata ja lukea tiedostoja.
+Haavoittuvaisuus 2: Anonymous FTP login allowed. Antaa luvan anonyyminä ladata ja lukea tiedostoja.
 
 
 #### Referenssit: 
@@ -136,4 +138,5 @@ KKO2003:36 :https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/
 
 Darknet diaries 113: Adam  :https://darknetdiaries.com/episode/113/
 
+https://www.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/
 
