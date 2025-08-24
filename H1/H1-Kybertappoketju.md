@@ -5,11 +5,42 @@
 
 ### X) Artikkelit
 
-https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
+Darknet Diaries jakso 113: Adam
+
+- Adam saa työpaikan koulun IT-tehtävissä ja huomasi että local admin password toimi kaikkiin koneisiin.
+
+- Irtisanotaan tehtävästä taustatutkimuksen takia.
+
+- Usean vuoden kulutta opittuaan lisää it taitoja, muistaa saman haavoittuvaisuuden koulun järjestelmäassä.
+
+- Kirjautuu koulun järjestelmään ja hankki luvattomasti pääkäyttäjänoikeudet (Privilege escalation).
+   
+- Tunnuksilla luki toisten sähköposteja ja viestejä. Muokkasi opettajien ja ylläpitäjien käyttäjätilejä.
+
+- Luvaton toiminta havaittiin jäjestelmän lokitiedoista joka johti pidätykseen.
+
+  
+
+Abstract, 3.2 Intrusion Kill Chain.
 
 - Intrusion Kill Chain malli jakaa kyberhyökkäykset seitsemään eri vaiheeseen: tiedustelu, aseistaminen, toimitus, hyväksikäyttö, asennus, komentokanava ja tavoitteiden saavuttaminen.
 
 - Auttaa puolustajia ymmärtämään hyökkäyksen kulun ja keskeyttämään sen mahdollisimman aikaisessa vaiheessa.
+
+Surveying Essential Tools for Active Reconnaissance. 
+
+- Active reconnaissance: tiedostelua, esim porttiskannausta haavoittuvaisuuksien löytämiseksi.
+
+- Nmap: monipuolisin ja vakain porttiskanneri.
+
+
+
+KKO 003:36
+
+- 17-vuotias yritti murtautua Osuuspankin tietojärjestelmään porttiskannauksen avulla.
+
+- Todettiin että porttiskannaus oli rikos ja tuomittiin maksamaan vahingonkorvausta noin 12 600e 
+
 
 
 ### A) Kali linuxin Versio: 2025.3 asennus
@@ -80,7 +111,7 @@ Sammutettuani netin, ensin käytin vain `nmap -sn` joka antoi vastauksen No targ
 
 Hyökkääjälle kiinnostavat portit:
 
-Portti 21 Telnet
+Portti 23 Telnet
 
 ![kuva1](/H1/kuvat/kuva9.png)
 
@@ -101,8 +132,8 @@ IBM: https://www.ibm.com/docs/en/i/7.5.0?topic=i-configuring-anonymous-ftp
 
 lockhead Martin: https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
 
+KKO2003:36 :https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36
 
-
-
+Darknet diaries 113: Adam  :https://darknetdiaries.com/episode/113/
 
 
