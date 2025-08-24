@@ -84,13 +84,13 @@ Portti 21 Telnet
 
 ![kuva1](/H1/kuvat/kuva9.png)
 
-Telnet näyttää salasanat selvässä tekstissä ilman mitään salausta joka tekee siitä haavoittuvaisuuden.
+Haavoittuvaisuus 1: Telnet näyttää salasanat selvässä tekstissä ilman mitään salausta.
 
 Portti 21 FTP
 
 ![kuva1](/H1/kuvat/kuva10.png)
 
-Skannauksessa tuli ilmi haavottuvaisuus: Anonymous FTP login allowed. Antaa luvan anonyyminä ladata ja lukea tiedostoja.
+Haavottuvaisuus 2: Anonymous FTP login allowed. Antaa luvan anonyyminä ladata ja lukea tiedostoja.
 
 
 #### Referenssit: 
